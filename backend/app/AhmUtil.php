@@ -29,6 +29,11 @@ class AhmUtil
 
         return (new Response($content, $status))
         ->header('Content-Type', 'application/json');
+
+        // In order to resolve CORS problem,
+        // Neither any of these settings was needed 
+        // nor any of them either worked!
+        
         // ->header('Access-Control-Allow-Origin', '*')
         // ->header('Accept', '*/*')
         // ->header('Access-Control-Request-Method', 'POST, GET')
@@ -36,20 +41,6 @@ class AhmUtil
         // ->header('Origin', 'http://127.0.0.1:4200')
         // ->header('Referer', 'http://127.0.0.1:4200/');
 
-
-        // :*/*
-        // Accept-Encoding:gzip, deflate, br
-        // Accept-Language:nl-NL,nl;q=0.8,en-US;q=0.6,en;q=0.4
-        // Access-Control-Request-Headers:content-type
-        // 
-        // Connection:keep-alive
-        // Host:hp-probook
-        // :
-        // :
-        
-        
-        // return Response()
-        // ->json(["ok" => $ok, "result" => $result]);
     }
 
     static function respAccessDenied(){

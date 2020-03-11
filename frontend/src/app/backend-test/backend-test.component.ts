@@ -21,6 +21,11 @@ export class BackendTestComponent implements OnInit {
       {},
       d => {
         console.log(d);
+
+        try {
+          if (d["ok"] != 1) return;
+          this.rsp = d["result"];
+        } catch (err) {}
       },
       err => {
         console.log(err);
