@@ -17,7 +17,7 @@ export class BackendTestComponent implements OnInit {
 
     this.http.postGetJson(
       // "http://localhost:8000/api/say-hello",
-      "/api",
+      "/api/say-hello",
       {},
       d => {
         console.log(d);

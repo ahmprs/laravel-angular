@@ -1,0 +1,4 @@
+web:
+https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
+
+C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --disable-web-security

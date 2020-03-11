@@ -22,3 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/say-hello', function(Request $req){
     return AhmUtil::resp(1, "Hello from laravel");
 });
+
+Route::post('/say-hello', function(Request $req){
+    return AhmUtil::resp(1, "Hello from laravel");
+});
