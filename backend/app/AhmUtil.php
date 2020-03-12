@@ -49,7 +49,9 @@ class AhmUtil
 
 
     static function upload(Request $req){
-        if (!isset($_FILES['fileToUpload'])) return AhmUtil::resp(0, 'missing file');
+        if (!isset($_FILES['fileToUpload'])) {
+            return AhmUtil::resp(0, ['err'=>'missing file', '$_FILES'=>$_FILES]);
+        };
         
         // TEST:
         // return AhmUtil::resp(1, $_FILES);
@@ -64,7 +66,7 @@ class AhmUtil
         $error = $_FILES['fileToUpload']['error'];
         $file_size = $_FILES['fileToUpload']['size'];
         
-        $dir_destination = storage_path("mydir/");
+        $dir_destination = storage_path("uploadFolder/");
         if (!is_dir($dir_destination)){
             if (!mkdir($dir_destination, 0777, true)) {
                 return AhmUtil::resp(0, "failed to create output directory");

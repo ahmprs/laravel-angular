@@ -4,3 +4,21 @@
 
 <button (click)="btnGetDataClick($event)">Get Data</button>
 <span>{{ rsp }}</span>
+
+<h2>
+  Upload test
+</h2>
+<!-- <form action="./api/upload">
+  <label>Please specify a file</label>
+  <input type="file" name="fileToUpload" />
+  <button type="submit">UPLOAD NOW</button>
+</form> -->
+
+<div class="form-group">
+  <label for="file">Choose File</label>
+  <input
+    type="file"
+    id="file"
+    (change)="handleFileInput($event.target.files)"
+  />
+</div>

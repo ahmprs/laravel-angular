@@ -32,4 +32,20 @@ export class BackendTestComponent implements OnInit {
       }
     );
   }
+
+  fileToUpload: File = null;
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+
+    this.http.postGetJson(
+      "/api/upload",
+      { fileToUpload: this.fileToUpload },
+      d => {
+        console.log(d);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

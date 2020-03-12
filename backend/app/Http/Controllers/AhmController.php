@@ -10,4 +10,10 @@ class AhmController extends Controller
     function sayHello(Request $req){
         return au::resp(1, 'Hello from laravel with hope!');
     }
+
+    function handleUpload(Request $req){
+        return au::upload($req);
+    }
+
+    
 }

@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/say-hello', 'AhmController@sayHello')->middleware('ahmdlvr');
 Route::post('/say-hello', 'AhmController@sayHello')->middleware('ahmdlvr');
+
+
+Route::get('/upload', 'AhmController@handleUpload');
+Route::post('/upload', 'AhmController@handleUpload');
