@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\AhmUtil;
+use App\Http\Controllers\AhmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/say-hello', function(Request $req){
-    return AhmUtil::resp(1, "Hello from laravel");
-});
-
-Route::post('/say-hello', function(Request $req){
-    return AhmUtil::resp(1, "Hello from laravel");
-});
+Route::get('/say-hello', 'AhmController@sayHello')->middleware('ahmdlvr');
+Route::post('/say-hello', 'AhmController@sayHello')->middleware('ahmdlvr');
