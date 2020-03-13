@@ -35,7 +35,7 @@ export class BackendTestComponent implements OnInit {
 
   afuConfig = {
     multiple: false,
-    formatsAllowed: ".jpg,.png",
+    formatsAllowed: ".jpg,.png, .txt",
     maxSize: "1",
     uploadAPI: {
       url: "/api/upload",
@@ -44,7 +44,7 @@ export class BackendTestComponent implements OnInit {
       }
     },
     theme: "dragNDrop",
-    hideProgressBar: true,
+    hideProgressBar: false,
     hideResetBtn: true,
     hideSelectBtn: true,
     replaceTexts: {

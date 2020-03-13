@@ -12,7 +12,7 @@ class AhmController extends Controller
     }
 
     function handleUpload(Request $req){
-        return au::upload($req);
+        return au::uploadHttpProcess($req);
     }
 
     
