@@ -9,11 +9,14 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpService } from "./http.service";
 
+import { AngularFontAwesomeModule } from "angular-font-awesome";
+
 let arr_paths = [{ path: "backend-test", component: BackendTestComponent }];
 
 @NgModule({
   declarations: [AppComponent, BackendTestComponent],
   imports: [
+    AngularFontAwesomeModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
