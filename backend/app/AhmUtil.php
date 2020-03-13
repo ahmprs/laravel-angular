@@ -49,6 +49,10 @@ class AhmUtil
 
 
     static function upload(Request $req){
+        
+        return AhmUtil::resp(1, ["Yahoo"=>$req]);
+
+
         if (!isset($_FILES['fileToUpload'])) {
             return AhmUtil::resp(0, ['err'=>'missing file', '$_FILES'=>$_FILES]);
         };

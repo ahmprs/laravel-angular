@@ -33,25 +33,28 @@ export class BackendTestComponent implements OnInit {
     );
   }
 
-  // fileToUpload: File = null;
-  // handleFileInput(files: FileList) {
-  //   this.fileToUpload = files.item(0);
-
-  //   this.http.postGetJson(
-  //     "/api/upload",
-  //     { fileToUpload: this.fileToUpload },
-  //     d => {
-  //       console.log(d);
-  //     },
-  //     err => {
-  //       console.log(err);
-  //     }
-  //   );
-  // }
-
-  fileToUpload: File = null;
-  fileChange(event) {
-    console.log(event);
-    this.fileToUpload = event[0];
-  }
+  afuConfig = {
+    multiple: false,
+    formatsAllowed: ".jpg,.png",
+    maxSize: "1",
+    uploadAPI: {
+      url: "/api/upload",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8"
+      }
+    },
+    theme: "dragNDrop",
+    hideProgressBar: true,
+    hideResetBtn: true,
+    hideSelectBtn: true,
+    replaceTexts: {
+      selectFileBtn: "Select Files",
+      resetBtn: "Reset",
+      uploadBtn: "PRESS TO UPLOAD",
+      dragNDropBox: "Drag N Drop",
+      attachPinBtn: "Attach Files...",
+      afterUploadMsg_success: "Successfully Uploaded !",
+      afterUploadMsg_error: "Upload Failed !"
+    }
+  };
 }
